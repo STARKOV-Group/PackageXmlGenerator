@@ -1,0 +1,15 @@
+Утилита генерации package.xml. 
+Реализовано для автогенерации перед автосборкой, чтоб учитывать любые изменения в проекте по составу решений и модулей автоматически.
+
+Утилита не поддерживает флаги для определения параметров.
+
+#	Наименовае			Обязательность		Стандартное_значение		Описание
+1.	-p --projectPath		+			Отсутствует			Папка со всеми репозиториями. Такой обычно называют git_repository
+2.	-o --outPath			-			projectPath			Путь выгрузки готового пакета. В конце добавляется имя \packageGen.xml
+3.	-l --solutionList		-			string.Empty			Список решений для сборки в пакет. Перечисляются через разделитель "|"
+4.	-a --includeAssemblies		-			true				Включить в пакет исполняемые файлы
+5.	-d --isDebugPackage		-			true				Передать как отладочный пакет (не работает без признака includeAssemblies)
+6.	-s --includeSources		-			false				Включить в пакет исходные коды
+7.	-m --isPreviousLayerModule	-			false				Передать как базовые решения (не работает без признака includeSources)
+
+Пример: PackageXmlGenerator.exe -p "C:\Users\Admin\Desktop\Projects" -o "C:\Users\Admin\Desktop\OutputFolder" -l "Solution1|Solution2"

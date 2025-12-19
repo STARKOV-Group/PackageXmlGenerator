@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PackageXmlGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "help"
+    }
+  }
+}
